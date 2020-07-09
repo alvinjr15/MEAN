@@ -24,6 +24,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.set('json replacer', function (key, value) {
+  if (this[key] instanceof Date) {
+    // Your own custom date serialization
+    var d = this[key];
+    d.setTime( d.getTime() - d.getTimezoneOffset()*60*1000 );
+    //tempDate.setHours(tempDate.getHours()-3);
+    value = d.toISOString().replace(/T/, ' ').replace(/\..+/, '');
+  }
+
+  return value;
+});
 
 app.use('/', index);
 app.use('/trades', trades);

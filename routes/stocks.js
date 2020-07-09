@@ -6,9 +6,10 @@ var router = express.Router();
 var StockControllers = require('../controllers/stocks')
 
 //GET /stocks/{stockSymbol}/trades?type={tradeType}&start={startDate}&end={endDate}
-router.get('/stocks/:stockSymbol/trades', StockControllers.getAllTrades)
+router.get('/:stockSymbol/trades', StockControllers.getAllStocksByDate)
 
 //GET /stocks/{stockSymbol}/price
-router.get('stocks/:stockSymbol/price', StockControllers.getHighestLowest)
+router.get('/:stockSymbol/price/', StockControllers.getHighestLowest)
 //END
+
 module.exports = router;

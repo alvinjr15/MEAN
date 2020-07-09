@@ -24,7 +24,6 @@
     "mocha-junit-reporter": "^1.13.0",
     "mocha-multi-reporters": "^1.1.4",
     "moment": "^2.18.1",
-    "mongoose": "^5.9.22",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
     "sqlite3": "^3.1.9"

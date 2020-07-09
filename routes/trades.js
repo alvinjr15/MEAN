@@ -5,16 +5,15 @@ var router = express.Router();
 //BEGIN
 var TradeControllers = require('../controllers/trades')
 
-router.get('/erase', TradeControllers.eraseAllTrades)
-
 //POST /trades
-router.post('/trades', TradeControllers.addTrade);
+router.post('/', TradeControllers.addTrade);
 
 //GET  /trades
-router.get('/trades', TradeControllers.getAllTrades);
+router.get('/', TradeControllers.getAllTrades);
 
 //GET /trades/users/{userID}
-router.get('trades/users/:userID', TradeControllers.getTradesByUserId)
-
+router.get('/users/:userID', TradeControllers.getTradesByUserId)
+router.get('/test', TradeControllers.author_delete_get);
 //END
+
 module.exports = router;

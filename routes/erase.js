@@ -5,6 +5,7 @@ var router = express.Router();
 //BEGIN
 var TradeControllers = require('../controllers/trades')
 
-router.get('/erase', TradeControllers.eraseAllTrades)
+router.delete('/', TradeControllers.eraseAllTrades)
 //END
+
 module.exports = router;
